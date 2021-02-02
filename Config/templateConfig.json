@@ -1,0 +1,6 @@
+{
+	"token": "Enter your Discord application token here",
+	"prefix": "b.",
+	
+	"lyricsToken": "Enter your Genius API key here"
+}
