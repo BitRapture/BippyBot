@@ -1,0 +1,16 @@
+{
+  "name": "bippy",
+  "version": "0.0.1",
+  "description": "a discord bot",
+  "main": "bot.js",
+  "scripts": {
+    "test": "node bot.js"
+  },
+  "author": "BitRapture",
+  "license": "MIT",
+  "dependencies": {
+    "canvas": "*",
+    "discord.js": "*",
+    "genius-lyrics-api": "*"
+  }
+}
