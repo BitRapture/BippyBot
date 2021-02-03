@@ -31,6 +31,11 @@ client.on("ready", () => {
 	client.user.setActivity(`${iConfig.prefix}help`, { type: "STREAMING", url: "https://www.youtube.com/watch?v=A8EfSiQFuvo" });
 });
 
+client.on("resume", () => {
+	console.log(`Resuming websocket!`);
+	client.user.setActivity(`${iConfig.prefix}help`, { type: "STREAMING", url: "https://www.youtube.com/watch?v=A8EfSiQFuvo" });
+});
+
 client.on("message", (message) => {
 	if (message.author.bot || !message.content.startsWith(iConfig.prefix)) return;
 	
