@@ -1,0 +1,41 @@
+[
+	{
+		"name": "ping",
+		"description": "Get a message back, pong!",
+		"options": [
+			{
+				"type": 3,
+				"name": "message",
+				"description": "Enter a callback response!",
+				"required": false
+			}
+		]
+	},
+	{
+		"name": "pog",
+		"description": "Send a pog emoji!",
+		"options": [
+			{
+				"type": 3,
+				"name": "emoji",
+				"description": "Choose a pog emoji!",
+				"required": true,
+				"choices": [
+					{
+						"name": "pogChamp emoji",
+						"value": "pogChamp"
+					},
+					{
+						"name": "pogU emoji",
+						"value": "pogU"
+					},
+					
+					{
+						"name": "pogLips emoji",
+						"value": "pogLips"
+					}
+				]
+			}
+		]
+	}
+]

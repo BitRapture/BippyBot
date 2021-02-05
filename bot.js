@@ -1,10 +1,20 @@
+// ---------------------------------------
+// Definitions/Declarations
+// ---------------------------------------
+
 const Discord = require("discord.js");
 const client = new Discord.Client();
+const slash = require("./Config/slashManager.js");
 const iConfig = require("./Config/config.json");
 const fs = require("fs");
 const commandFiles = fs.readdirSync("./Commands").filter(i => i.endsWith(".js"));
 client.tempEmbeds = require("./Config/embedTemplates.js");
 client.prfx = iConfig.prefix;
+client.lyricsToken = iConfig.lyricsToken;
+
+// ---------------------------------------
+// Command Mapping
+// ---------------------------------------
 
 client.cmdList = new Map();
 client.cmdHelpCat = [];
@@ -24,15 +34,24 @@ for (const file of commandFiles) {
 	}
 }
 
-client.lyricsToken = iConfig.lyricsToken;
+// ---------------------------------------
+// Slash Manager
+// ---------------------------------------
+
+slash.login(iConfig.token);
+slash.get();
+
+// ---------------------------------------
+// Discord Bot 
+// ---------------------------------------
 
 client.on("ready", () => {
 	console.log(`Successfully logged in as ${client.user.tag}!`);
+	console.log(`Loaded ${slash.commands.size} slash command(s)!`);
 	client.user.setActivity(`${iConfig.prefix}help`, { type: "STREAMING", url: "https://www.youtube.com/watch?v=A8EfSiQFuvo" });
 });
 
 client.on("resume", () => {
-	console.log(`Resuming websocket!`);
 	client.user.setActivity(`${iConfig.prefix}help`, { type: "STREAMING", url: "https://www.youtube.com/watch?v=A8EfSiQFuvo" });
 });
 
