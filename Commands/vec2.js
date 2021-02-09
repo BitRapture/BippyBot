@@ -38,7 +38,7 @@ function vecUnit(v1X, v1Y) {
 	v1 *= v1; v2 *= v2;
 	let m = Math.sqrt(v1 + v2);
 	let nX = parseFloat(v1X) / m, nY = parseFloat(v1Y) / m;
-	return "```^vec2D^: [" + `${nX}, ${nY}` + "]```";
+	return "```^vec2D^: [" + `${(v1 + v2 == 0 ? 0 : nX)}, ${(v1 + v2 == 0 ? 0 : nY)}` + "]```";
 }
 
 module.exports = {
@@ -103,6 +103,9 @@ module.exports = {
 					}
 					break;
 				case "unit":
+				case "norm":
+				case "normalise":
+				case "normalize":
 				case "u":
 				case "^":
 					error = checkType(args, 2);
