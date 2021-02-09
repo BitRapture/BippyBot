@@ -86,7 +86,7 @@ module.exports = {
 			}
 			if (success) {
 				sum = (notf ? ~sum : sum);
-				embed.description = "```0b" + (sum >>> 0).toString(2) + " \n----------------------------------\n0d" + sum.toString() + "```";
+				embed.description = "```0b " + (sum >>> 0).toString(2) + " \n-----------------------------------\n0d " + sum.toString() + "```";
 			} else {
 				embed.description = client.tempEmbeds.errMsg(errMsg);
 			}
